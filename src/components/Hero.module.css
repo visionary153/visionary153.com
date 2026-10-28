@@ -25,10 +25,9 @@
 }
 
 .sub {
-  font-size: 18px;
+  font-size: 21px;
   color: var(--muted);
-  max-width: 600px;
-  margin-bottom: 8px;
+  max-width: 680px;
 }
 
 .symbol {
@@ -47,7 +46,7 @@
   }
 
   .sub {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .symbol {

@@ -5,6 +5,7 @@ import MyNumbersScreen from './mockups/MyNumbersScreen';
 import QrScreen from './mockups/QrScreen';
 import PhoneFrame from './PhoneFrame';
 import styles from './Products.module.css';
+import ScreenCarousel from './ScreenCarousel';
 
 type ProductsProps = {
   locale: Locale;
@@ -27,10 +28,7 @@ export default function Products({ locale, t, lotto, next }: ProductsProps) {
   return (
     <section id="products" className={styles.section}>
       <div className={`wrap ${styles.inner}`}>
-        <div className={styles.heading}>
-          <span className="eyebrow">{t.eyebrow}</span>
-          <h2 className="section-title">{t.title}</h2>
-        </div>
+        <h2 className="section-title">{t.title}</h2>
 
         <article className={styles.card}>
           <div className={styles.productHead}>
@@ -50,7 +48,10 @@ export default function Products({ locale, t, lotto, next }: ProductsProps) {
             </div>
           </div>
 
-          <div className={styles.phones}>
+          <ScreenCarousel
+            label={lotto.screensLabel}
+            slideTitles={features.map(({ copy }) => copy.title)}
+          >
             {features.map(({ key, copy, screen }) => (
               <figure key={key} className={styles.feature}>
                 <PhoneFrame>{screen}</PhoneFrame>
@@ -60,7 +61,7 @@ export default function Products({ locale, t, lotto, next }: ProductsProps) {
                 </figcaption>
               </figure>
             ))}
-          </div>
+          </ScreenCarousel>
 
           <div className={styles.extras}>
             <ul className={styles.chips}>
@@ -83,7 +84,6 @@ export default function Products({ locale, t, lotto, next }: ProductsProps) {
                 </li>
               ))}
             </ul>
-            <p className={styles.disclaimer}>{lotto.disclaimer}</p>
           </div>
         </article>
 

@@ -16,22 +16,6 @@ export default function Hero({ t }: HeroProps) {
             {t.titleLead} <span className="gradient-text">{t.titleAccent}</span>
           </h1>
           <p className={styles.sub}>{t.sub}</p>
-          <a href="#products" className="button-primary">
-            {t.cta}
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M12 5v14M6 13l6 6 6-6" />
-            </svg>
-          </a>
         </div>
         <svg viewBox="0 0 120 120" aria-hidden="true" className={styles.symbol}>
           <defs>

@@ -6,13 +6,12 @@ export default function Contact({ t }: { t: Dictionary['contact'] }) {
   return (
     <section id="contact" className={styles.section}>
       <div className={`wrap ${styles.inner}`}>
-        <span className="eyebrow">{t.eyebrow}</span>
         <h2 className="section-title">{t.title}</h2>
         <p className={styles.body}>{t.body}</p>
-        <a href={`mailto:${CONTACT_EMAIL}`} className={`button-primary ${styles.mail}`}>
+        <a href={`mailto:${CONTACT_EMAIL}`} className={styles.mail}>
           <svg
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

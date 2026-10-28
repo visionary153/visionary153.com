@@ -1,0 +1,97 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 넓은 화면: 나란히 */
+.track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.dots {
+  display: none;
+}
+
+/* 좁은 화면: 한 장씩 넘기는 슬라이드 (프로덕트가 늘어도 세로 길이 유지) */
+@media (max-width: 1100px) {
+  .track {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 마우스로 끌어 넘기기 */
+  .track {
+    cursor: grab;
+  }
+
+  .track[data-dragging='true'] {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
+  .track:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 12px;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.dot {
+  width: 28px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+  transition: width 0.2s ease;
+}
+
+.dot:hover::before {
+  background: var(--muted);
+}
+
+.dot[aria-current='true']::before {
+  width: 22px;
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot::before {
+    transition: none;
+  }
+}

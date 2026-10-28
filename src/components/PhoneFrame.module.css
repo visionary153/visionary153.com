@@ -7,6 +7,13 @@
   box-shadow: 0 32px 60px -24px var(--shadow);
 }
 
+/* 슬라이드(가로 스크롤 영역) 안에서는 넓은 그림자가 양옆에서 잘리므로 작게 */
+@media (max-width: 1100px) {
+  .bezel {
+    box-shadow: 0 16px 28px -18px var(--shadow);
+  }
+}
+
 .display {
   width: 273px;
   height: 591px;

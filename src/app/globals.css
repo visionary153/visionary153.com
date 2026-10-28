@@ -95,41 +95,17 @@ figure {
   color: transparent;
 }
 
-.button-primary {
-  height: 54px;
-  padding: 0 26px;
-  border-radius: var(--radius-button);
-  background: var(--accent);
-  color: var(--on-accent);
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.button-primary:hover {
-  color: var(--on-accent);
-  filter: brightness(1.08);
-}
-
-.eyebrow {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--accent-text);
-}
-
+/* 섹션 제목은 작은 강조색 라벨 — 그 아래 제품명·내용이 더 눈에 띄도록 */
 .section-title {
-  font-size: 44px;
-  line-height: 1.25;
+  font-size: 24px;
+  line-height: 1.4;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
+  color: var(--accent-text);
 }
 
 @media (max-width: 900px) {
   .section-title {
-    font-size: 30px;
+    font-size: 20px;
   }
 }

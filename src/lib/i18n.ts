@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 export const LOCALES = ['ko', 'en'] as const;
 export type Locale = (typeof LOCALES)[number];
 
+/** 브라우저 언어로 정하지 못할 때 쓰는 언어 */
+export const DEFAULT_LOCALE: Locale = 'ko';
+
 /** 사용자가 고른 언어 — `/` 접속 시 이 값으로 이동한다 */
 export const LOCALE_STORAGE_KEY = 'v153-locale';
 

@@ -16,15 +16,14 @@ const en: Dictionary = {
   hero: {
     titleLead: 'Technology that',
     titleAccent: 'does good for people.',
-    sub: 'We build apps that take the small frictions out of everyday life, shipping only the technology that genuinely helps the people who use it.',
-    cta: 'See products',
+    sub: 'We build apps that ease the small frictions of everyday life, with technology that helps the people who use it.',
   },
   products: {
-    eyebrow: 'PRODUCTS',
-    title: 'Apps that add a little good to every day',
+    title: 'Products',
   },
   lotto: {
     name: 'Lotto Wealthy',
+    screensLabel: 'Lotto Wealthy key screens',
     badge: 'Coming soon',
     tagline:
       'Check results with a single QR scan, generate numbers and keep your favorites.\nA lighter, easier way to enjoy Korea’s Lotto 6/45.',
@@ -43,21 +42,19 @@ const en: Dictionary = {
       },
     },
     chips: [
-      'No sign-up needed',
-      'Your numbers stay on your phone',
-      'Backup & restore across iOS and Android',
-      'Saturday draw alerts',
+      'Free, no sign-up',
+      'Algorithm-based number generator',
+      'Backup & restore',
+      'Continuous QR result check',
     ],
-    disclaimer: 'The number generator is just for fun and does not improve your odds of winning.',
   },
   next: {
     title: 'Our next product is in the works',
     body: 'You’ll hear about it here first.',
   },
   contact: {
-    eyebrow: 'CONTACT',
-    title: 'Let’s talk',
-    body: 'Ideas, feedback and bug reports are all welcome.\nSend us an email and we’ll read every message carefully.',
+    title: 'Contact',
+    body: 'Ideas, feedback and bug reports are all welcome.',
   },
   footer: {
     label: 'Footer menu',
@@ -87,13 +84,16 @@ const en: Dictionary = {
         heading: '3. Information processed automatically',
         paragraphs: [
           'The Site is delivered through Cloudflare. To keep the service secure and reliable, Cloudflare may process access logs such as IP address, browser type and time of access.',
-          'The Site does not use cookies. The language you choose is stored only in your browser’s local storage (localStorage) for your next visit and is never sent to a server.',
+          'The Site uses Google Analytics through Google Tag Manager for visitor statistics. In doing so, Google uses cookies to collect usage data such as the pages you visit, time spent, device and browser information and approximate location. We do not collect information that directly identifies you, such as your name or contact details.',
+          'You can refuse this collection by blocking cookies in your browser settings or by installing the Google Analytics opt-out add-on (https://tools.google.com/dlpage/gaoptout). The collected data is handled under Google’s Privacy Policy (https://policies.google.com/privacy).',
+          'The language you choose is stored only in your browser’s local storage (localStorage) for your next visit and is never sent to a server.',
         ],
       },
       {
-        heading: '4. Sharing with third parties',
+        heading: '4. Sharing with third parties and international transfer',
         paragraphs: [
           'We do not share personal information with third parties except where required by law.',
+          'For visitor statistics, the usage data described in section 3 may be transferred to and stored on servers of Google LLC (United States).',
         ],
       },
       {

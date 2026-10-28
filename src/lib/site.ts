@@ -1,6 +1,7 @@
 export const SITE_URL = 'https://visionary153.com';
 export const SITE_NAME = 'visionary153';
 export const CONTACT_EMAIL = 'visionary153.dev@gmail.com';
+export const GTM_ID = 'GTM-N76Z8CCV';
 
 export const BRAND_COLORS = {
   navy: '#1B2140',

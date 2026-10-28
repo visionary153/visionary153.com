@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Footer from '@/components/Footer';
+import { GoogleTagManagerNoScript, GoogleTagManagerScript } from '@/components/GoogleTagManager';
 import Header from '@/components/Header';
 import { getDictionary } from '@/dictionaries';
 import { plexSansKr } from '@/lib/fonts';
@@ -59,6 +60,8 @@ export default async function SiteLayout({ children, params }: LayoutProps<'/[la
   return (
     <html lang={locale} className={plexSansKr.variable}>
       <body>
+        <GoogleTagManagerNoScript />
+        <GoogleTagManagerScript />
         <Header locale={locale} t={t.nav} />
         <main>{children}</main>
         <Footer locale={locale} t={t.footer} />
