@@ -1,0 +1,35 @@
+.footer {
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  margin-left: -9px;
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}

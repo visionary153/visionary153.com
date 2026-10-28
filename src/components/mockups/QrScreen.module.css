@@ -1,0 +1,169 @@
+.roundRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.round {
+  font-size: 17px;
+}
+
+.winningRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 12px 0;
+}
+
+.plus {
+  width: 14px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #8a909c;
+}
+
+.prizeRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f1f4;
+  font-variant-numeric: tabular-nums;
+}
+
+.camera {
+  position: relative;
+  height: 250px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #1f2228;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.corner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 0 solid #ffffff;
+}
+
+.topLeft {
+  left: 0;
+  top: 0;
+  border-left-width: 4px;
+  border-top-width: 4px;
+  border-radius: 12px 0 0 0;
+}
+
+.topRight {
+  right: 0;
+  top: 0;
+  border-right-width: 4px;
+  border-top-width: 4px;
+  border-radius: 0 12px 0 0;
+}
+
+.bottomLeft {
+  left: 0;
+  bottom: 0;
+  border-left-width: 4px;
+  border-bottom-width: 4px;
+  border-radius: 0 0 0 12px;
+}
+
+.bottomRight {
+  right: 0;
+  bottom: 0;
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+  border-radius: 0 0 12px 0;
+}
+
+.scanLine {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 73px;
+  height: 2px;
+  background: #8fd16a;
+}
+
+.scanHint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.torch {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 6px;
+  padding: 10px 12px;
+  background: #eaf4e2;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #24600c;
+}
+
+.gameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  border-bottom: 1px solid #f0f1f4;
+}
+
+.gameLabel {
+  width: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #5b6270;
+}
+
+.gameBalls {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+}
+
+.result {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5b6270;
+}
+
+.resultWin {
+  composes: result;
+  font-weight: 700;
+  color: #24600c;
+}

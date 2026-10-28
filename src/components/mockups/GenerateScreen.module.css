@@ -1,0 +1,128 @@
+.hint {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #5b6270;
+}
+
+.sentence {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 2.1;
+}
+
+.token {
+  font-weight: 700;
+  color: #c40f25;
+  background: #ffecee;
+  padding: 4px 9px;
+  border-radius: 8px;
+}
+
+.pickRows {
+  margin-top: 14px;
+  border-top: 1px solid #f0f1f4;
+}
+
+.pickRow {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pickRow + .pickRow {
+  border-top: 1px solid #f0f1f4;
+}
+
+.pickValue {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.resultCard {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.balls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 12px;
+  background: #f4f5f7;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #5b6270;
+}
+
+.saved {
+  height: 46px;
+  border-radius: 12px;
+  background: #eaf4e2;
+  color: #24600c;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.note {
+  font-size: 12px;
+  color: #5b6270;
+  text-align: center;
+}
+
+.actionBar {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-top: 1px solid #eef0f3;
+}
+
+.reset {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid #e4e7ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5b6270;
+}
+
+.again {
+  flex: 1;
+  height: 52px;
+  border-radius: 14px;
+  background: #e5162f;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

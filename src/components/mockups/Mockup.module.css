@@ -1,0 +1,126 @@
+/* 로또부자 앱 화면 목업 (390×844 기준). 실제 스크린샷이 오면 교체한다. 색은 앱 theme.ts와 같다 */
+
+.screen {
+  width: 390px;
+  height: 844px;
+  display: flex;
+  flex-direction: column;
+  background: #f4f5f7;
+  color: #15171c;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.header {
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 0 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.headerTitle {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+}
+
+.headerText {
+  height: 44px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #5b6270;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.muted {
+  color: #5b6270;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #24600c;
+  background: #eaf4e2;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.badgeMuted {
+  composes: badge;
+  color: #5b6270;
+  background: #f0f1f4;
+}
+
+.ball {
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tabBar {
+  height: 64px;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: #ffffff;
+  border-top: 1px solid #eef0f3;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #5b6270;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tabActive {
+  composes: tab;
+  color: #2f7d10;
+  font-weight: 700;
+}

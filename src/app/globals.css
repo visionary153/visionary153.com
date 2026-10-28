@@ -1,0 +1,135 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f5f7fd;
+  --surface: #ffffff;
+  --text: #1b2140;
+  --muted: #545c7a;
+  --line: #e3e7f2;
+  --accent: #3a5bef;
+  --accent-text: #2b48d6;
+  --accent-soft: #eef1ff;
+  --on-accent: #ffffff;
+  --g1: #4cc9f0;
+  --g2: #3a5bef;
+  --g3: #7b4dff;
+  --bezel: #1b2140;
+  --shadow: rgba(27, 33, 64, 0.28);
+
+  --radius-button: 14px;
+  --content-width: 1200px;
+  --gutter: 40px;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1330;
+    --bg-soft: #121a3f;
+    --surface: #161d46;
+    --text: #ffffff;
+    --muted: #aeb5d8;
+    --line: #2a3366;
+    --accent: #7a93ff;
+    --accent-text: #a9b9ff;
+    --accent-soft: #1e2758;
+    --on-accent: #0e1330;
+    --g1: #6fd8ff;
+    --g2: #5b7bff;
+    --g3: #9b78ff;
+    --bezel: #04071a;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-text);
+}
+
+a:hover {
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+.wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, var(--g1), var(--g2) 50%, var(--g3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.button-primary {
+  height: 54px;
+  padding: 0 26px;
+  border-radius: var(--radius-button);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-primary:hover {
+  color: var(--on-accent);
+  filter: brightness(1.08);
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-text);
+}
+
+.section-title {
+  font-size: 44px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 30px;
+  }
+}

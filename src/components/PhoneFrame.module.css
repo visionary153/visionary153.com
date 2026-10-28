@@ -1,0 +1,22 @@
+.bezel {
+  width: 293px;
+  height: 611px;
+  padding: 10px;
+  border-radius: 46px;
+  background: var(--bezel);
+  box-shadow: 0 32px 60px -24px var(--shadow);
+}
+
+.display {
+  width: 273px;
+  height: 591px;
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+.scaler {
+  width: 390px;
+  height: 844px;
+  transform: scale(0.7);
+  transform-origin: 0 0;
+}
