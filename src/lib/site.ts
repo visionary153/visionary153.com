@@ -2,6 +2,8 @@ export const SITE_URL = 'https://visionary153.com';
 export const SITE_NAME = 'visionary153';
 export const CONTACT_EMAIL = 'visionary153.dev@gmail.com';
 export const GTM_ID = 'GTM-N76Z8CCV';
+/** 네이버 서치어드바이저 소유확인 — 등록한 `/`와 언어별 페이지에 모두 넣는다 */
+export const NAVER_SITE_VERIFICATION = 'd18d0c3b292efbd08c71d05f42522f4784d9a5de';
 
 export const BRAND_COLORS = {
   navy: '#1B2140',

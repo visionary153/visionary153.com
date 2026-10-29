@@ -11,5 +11,8 @@
 /apple-icon
   Content-Type: image/png
 
+/opengraph-image-*
+  Content-Type: image/png
+
 /:lang/opengraph-image-*
   Content-Type: image/png
