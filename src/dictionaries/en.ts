@@ -63,10 +63,10 @@ const en: Dictionary = {
   },
   privacy: {
     title: 'Privacy Policy',
-    description: 'Privacy policy for the visionary153.com website.',
-    effective: 'Effective date: October 28, 2026',
+    description: 'Privacy policy for visionary153.com and its product websites.',
+    effective: 'Effective date: October 29, 2026',
     intro:
-      'visionary153 (“we”) respects the privacy of everyone who visits visionary153.com (the “Site”) and complies with applicable laws, including the Personal Information Protection Act of Korea. This policy covers the Site only; each app made by visionary153 follows its own privacy policy.',
+      'visionary153 (“we”) respects the privacy of everyone who visits visionary153.com and the product websites we run on its subdomains, including the Lotto Wealthy web at lotto-rich.visionary153.com (together, the “Site”), and complies with applicable laws, including the Personal Information Protection Act of Korea. This policy covers the Site only; each mobile app made by visionary153 follows its own privacy policy.',
     sections: [
       {
         heading: '1. Information we collect',
@@ -86,7 +86,8 @@ const en: Dictionary = {
           'The Site is delivered through Cloudflare. To keep the service secure and reliable, Cloudflare may process access logs such as IP address, browser type and time of access.',
           'The Site uses Google Analytics through Google Tag Manager for visitor statistics. In doing so, Google uses cookies to collect usage data such as the pages you visit, time spent, device and browser information and approximate location. We do not collect information that directly identifies you, such as your name or contact details.',
           'You can refuse this collection by blocking cookies in your browser settings or by installing the Google Analytics opt-out add-on (https://tools.google.com/dlpage/gaoptout). The collected data is handled under Google’s Privacy Policy (https://policies.google.com/privacy).',
-          'The language you choose is stored only in your browser’s local storage (localStorage) for your next visit and is never sent to a server.',
+          'The Lotto Wealthy web loads the latest winning numbers from GitHub Pages (GitHub, Inc.). In doing so, GitHub may process access logs such as your IP address.',
+          'The language you choose (visionary153.com) and your number generation settings (Lotto Wealthy web) are stored only in your browser’s local storage (localStorage) for your next visit and are never sent to a server.',
         ],
       },
       {
@@ -94,6 +95,7 @@ const en: Dictionary = {
         paragraphs: [
           'We do not share personal information with third parties except where required by law.',
           'For visitor statistics, the usage data described in section 3 may be transferred to and stored on servers of Google LLC (United States).',
+          'Access logs from the Lotto Wealthy web’s winning-number requests may be processed on servers of GitHub, Inc. (United States).',
         ],
       },
       {

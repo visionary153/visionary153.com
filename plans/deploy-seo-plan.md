@@ -2,7 +2,7 @@
 
 - 생성: 2026-10-29 14:24
 - 수정: 2026-10-29 15:00
-- 상태: 배포 설정 완료, 첫 배포 대기(사용자 실행)
+- 상태: 배포 완료 (visionary153.com)
 
 ## 목표
 
@@ -36,3 +36,9 @@
 - 가정: 커스텀 도메인은 설정 파일에 넣지 않고 대시보드에서 연결 — 넣으면 API 토큰에 Zone 권한까지 필요
 - 검증 통과: `wrangler deploy --dry-run` (out/ 469개 파일 읽음)
 - 미실행: 첫 배포 — Claude Code 권한 분류기가 운영 배포를 막음. 사용자가 직접 실행하거나 push로 Actions 배포
+
+### 기록 (2026-10-29 배포 확인)
+
+- 사용자가 main push → Actions 배포, 커스텀 도메인 visionary153.com 연결
+- 검증 통과(실제 도메인): `/`·`/ko/`·`/en/`·privacy 200, `/ko` → `/ko/` 307, 없는 경로 404(404 페이지), ads.txt·app-ads.txt·robots·sitemap·manifest·favicon.ico·아이콘·OG 이미지 3종 200(올바른 Content-Type), `_headers` 보안 헤더 적용, `_next/static` immutable 캐시, `/`·`/ko/` naver-site-verification, `/ko/` GTM
+- 미설정: `www.visionary153.com` (DNS 없음). ads.txt는 아직 주석만 있음(AdSense 게시자 ID 대기)
