@@ -91,27 +91,35 @@ const en: Dictionary = {
         ],
       },
       {
-        heading: '4. Sharing with third parties and international transfer',
+        heading: '4. Advertising',
+        paragraphs: [
+          'Some pages of the Site, including the Lotto Wealthy web, may show Google AdSense ads. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this Site or other websites.',
+          'Google may use advertising cookies to show you personalized ads. You can turn off personalized ads in Google Ad Settings (https://adssettings.google.com), or opt out of third-party vendors’ personalized advertising cookies at https://www.aboutads.info.',
+          'Learn how Google uses data for advertising at https://policies.google.com/technologies/ads.',
+        ],
+      },
+      {
+        heading: '5. Sharing with third parties and international transfer',
         paragraphs: [
           'We do not share personal information with third parties except where required by law.',
-          'For visitor statistics, the usage data described in section 3 may be transferred to and stored on servers of Google LLC (United States).',
+          'For visitor statistics and advertising, the data described in sections 3 and 4 may be transferred to and stored on servers of Google LLC (United States).',
           'Access logs from the Lotto Wealthy web’s winning-number requests may be processed on servers of GitHub, Inc. (United States).',
         ],
       },
       {
-        heading: '5. Your rights',
+        heading: '6. Your rights',
         paragraphs: [
           'You may ask at any time to access, correct or delete the information you sent us by email, and we will handle your request without delay.',
         ],
       },
       {
-        heading: '6. Changes to this policy',
+        heading: '7. Changes to this policy',
         paragraphs: [
           'If this policy changes, we will post the update on this page with its effective date. We will also update this page before introducing new features such as advertising.',
         ],
       },
       {
-        heading: '7. Privacy officer and contact',
+        heading: '8. Privacy officer and contact',
         paragraphs: [
           'Privacy officer: visionary153',
           'For any privacy questions, please email us at the address below.',

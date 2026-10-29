@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
+import AdSenseScript from '@/components/AdSenseScript';
 import { plexSansKr } from '@/lib/fonts';
 import { DEFAULT_LOCALE, languageAlternates, LOCALES, OG_LOCALES } from '@/lib/i18n';
-import { NAVER_SITE_VERIFICATION, SITE_NAME, SITE_URL } from '@/lib/site';
+import { ADSENSE_CLIENT, NAVER_SITE_VERIFICATION, SITE_NAME, SITE_URL } from '@/lib/site';
 import '../globals.css';
 
 // 도메인만 공유될 때 미리보기에 쓰는 문구 — 기본 언어 홈과 같게
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
   title: SITE_NAME,
   description: '기술로, 사람을 이롭게 — Technology that does good for people.',
   verification: { other: { 'naver-site-verification': NAVER_SITE_VERIFICATION } },
+  // AdSense 사이트 소유확인 (등록 사이트가 visionary153.com)
+  other: { 'google-adsense-account': ADSENSE_CLIENT },
   alternates: {
     canonical: '/',
     languages: languageAlternates(),
@@ -39,7 +42,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="ko" className={plexSansKr.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <AdSenseScript />
+      </body>
     </html>
   );
 }

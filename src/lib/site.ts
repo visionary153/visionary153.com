@@ -4,6 +4,8 @@ export const CONTACT_EMAIL = 'visionary153.dev@gmail.com';
 export const GTM_ID = 'GTM-N76Z8CCV';
 /** 네이버 서치어드바이저 소유확인 — 등록한 `/`와 언어별 페이지에 모두 넣는다 */
 export const NAVER_SITE_VERIFICATION = 'd18d0c3b292efbd08c71d05f42522f4784d9a5de';
+/** Google AdSense 게시자 — 등록 사이트가 visionary153.com이라 소유확인 스크립트를 이 사이트에도 둔다 */
+export const ADSENSE_CLIENT = 'ca-pub-4550034070262591';
 
 export const BRAND_COLORS = {
   navy: '#1B2140',

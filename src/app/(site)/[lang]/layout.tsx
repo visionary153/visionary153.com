@@ -1,11 +1,18 @@
 import type { Metadata, Viewport } from 'next';
+import AdSenseScript from '@/components/AdSenseScript';
 import Footer from '@/components/Footer';
 import { GoogleTagManagerNoScript, GoogleTagManagerScript } from '@/components/GoogleTagManager';
 import Header from '@/components/Header';
 import { getDictionary } from '@/dictionaries';
 import { plexSansKr } from '@/lib/fonts';
 import { languageAlternates, LOCALES, OG_LOCALES, toLocale } from '@/lib/i18n';
-import { BRAND_COLORS, NAVER_SITE_VERIFICATION, SITE_NAME, SITE_URL } from '@/lib/site';
+import {
+  ADSENSE_CLIENT,
+  BRAND_COLORS,
+  NAVER_SITE_VERIFICATION,
+  SITE_NAME,
+  SITE_URL,
+} from '@/lib/site';
 import '../../globals.css';
 
 export const dynamicParams = false;
@@ -31,6 +38,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Prom
     description: t.description,
     applicationName: SITE_NAME,
     verification: { other: { 'naver-site-verification': NAVER_SITE_VERIFICATION } },
+    other: { 'google-adsense-account': ADSENSE_CLIENT },
     alternates: {
       canonical: `/${locale}/`,
       languages: languageAlternates(),
@@ -63,6 +71,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<'/[la
       <body>
         <GoogleTagManagerNoScript />
         <GoogleTagManagerScript />
+        <AdSenseScript />
         <Header locale={locale} t={t.nav} />
         <main>{children}</main>
         <Footer locale={locale} t={t.footer} />

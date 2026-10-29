@@ -22,6 +22,7 @@ visionary153(개발자·사업체)의 프로덕트 소개 홈페이지. 업무 �
 - 제품 표기: 로또부자 / Lotto Wealthy. 연락처는 이메일만, GitHub 링크 없음
 - 분석: Google 태그 관리자(`GTM_ID`, `src/lib/site.ts`)는 `(site)` 레이아웃에만. 수집 항목이 바뀌면 개인정보처리방침도 함께 고친다
 - 개인정보처리방침은 하위 도메인 제품 웹(lotto-rich.visionary153.com 등)도 함께 다룬다. 그 웹들의 수집 항목이 바뀌어도 여기를 고친다
+- AdSense(`ADSENSE_CLIENT`)는 등록 사이트가 visionary153.com이라 소유확인 메타 태그(`google-adsense-account`)와 스크립트(`AdSenseScript`, afterInteractive — head에 직접 두면 hydration 불일치)를 `(root)`·`(site)` 레이아웃 모두에 둔다. ads.txt는 `public/ads.txt`
 - 로또부자 소개에 "당첨 확률 상승·예측" 표현 금지
 - 확인: `npm run lint`, `npm run typecheck`(route 타입 생성 포함), `npm run build`, 로컬 확인은 `npm run preview`
 - 포맷: Prettier (`npm run format`)

@@ -1,2 +1,1 @@
-# Google AdSense 게시자 ID를 받으면 아래 형식으로 추가한다
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-4550034070262591, DIRECT, f08c47fec0942fa0
