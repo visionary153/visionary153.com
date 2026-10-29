@@ -5,7 +5,7 @@ visionary153(개발자·사업체)의 프로덕트 소개 홈페이지. 업무 �
 ## 스택·배포
 
 - Next.js 16 App Router + 정적 내보내기(`output: 'export'`, `trailingSlash: true`) → `out/`
-- 배포: Cloudflare Pages (GitHub 연결, 빌드 `npm run build`, 출력 `out`). 서버 기능(rewrites, headers, proxy, 쿠키 등) 사용 불가 — 응답 헤더는 `public/_headers`
+- 배포: Cloudflare Workers 정적 자산(`wrangler.jsonc`, 이름 `visionary153`). main push → GitHub Actions(`.github/workflows/deploy.yml`)가 lint·typecheck·build 후 `wrangler deploy`. 서버 기능(rewrites, headers, proxy, 쿠키 등) 사용 불가 — 응답 헤더는 `public/_headers`
 - 스타일: CSS Modules + `src/app/globals.css`의 CSS 변수(라이트/다크는 `prefers-color-scheme`)
 - 폰트: IBM Plex Sans KR (`next/font/google`, 빌드 시 자체 호스팅). OG 이미지용 TTF는 `assets/fonts/`
 

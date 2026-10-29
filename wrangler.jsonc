@@ -1,0 +1,11 @@
+// Cloudflare Workers 정적 자산 배포 설정 — `npm run build` 결과(out/)를 그대로 올린다
+{
+  "name": "visionary153",
+  "compatibility_date": "2026-10-23",
+  "assets": {
+    "directory": "./out",
+    // trailingSlash: true로 내보낸 경로(/ko/)와 canonical을 맞춘다
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+}
