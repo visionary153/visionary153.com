@@ -23,6 +23,7 @@ const ko = {
     name: '로또부자',
     screensLabel: '로또부자 주요 화면',
     badge: '출시 예정',
+    webCta: '웹에서 체험하기',
     tagline:
       'QR 한 번으로 당첨 확인, 번호 생성부터 내 번호 관리까지.\n인기 알고리즘으로 나만의 번호를 만드세요.',
     features: {

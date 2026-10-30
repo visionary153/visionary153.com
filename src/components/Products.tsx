@@ -1,5 +1,6 @@
 import type { Dictionary } from '@/dictionaries';
 import type { Locale } from '@/lib/i18n';
+import { LOTTO_RICH_WEB_URL } from '@/lib/site';
 import GenerateScreen from './mockups/GenerateScreen';
 import MyNumbersScreen from './mockups/MyNumbersScreen';
 import QrScreen from './mockups/QrScreen';
@@ -45,6 +46,10 @@ export default function Products({ locale, t, lotto, next }: ProductsProps) {
                 <span className={styles.platforms}>iOS · Android</span>
               </div>
               <p className={styles.tagline}>{lotto.tagline}</p>
+              {/* 앱 출시 전, 번호 생성 기능을 웹(서브도메인)에서 바로 써 볼 수 있게 잇는다 */}
+              <a className={styles.webCta} href={LOTTO_RICH_WEB_URL}>
+                {lotto.webCta} <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
 

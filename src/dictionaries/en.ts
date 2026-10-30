@@ -25,6 +25,7 @@ const en: Dictionary = {
     name: 'Lotto Wealthy',
     screensLabel: 'Lotto Wealthy key screens',
     badge: 'Coming soon',
+    webCta: 'Try it on the web',
     tagline:
       'Check results with a single QR scan, generate numbers and keep your favorites.\nA lighter, easier way to enjoy Korea’s Lotto 6/45.',
     features: {
