@@ -67,7 +67,7 @@ const en: Dictionary = {
     description: 'Privacy policy for visionary153.com and its product websites.',
     effective: 'Effective date: October 29, 2026',
     intro:
-      'visionary153 (“we”) respects the privacy of everyone who visits visionary153.com and the product websites we run on its subdomains, including the Lotto Wealthy web at lotto-rich.visionary153.com (together, the “Site”), and complies with applicable laws, including the Personal Information Protection Act of Korea. This policy covers the Site only; each mobile app made by visionary153 follows its own privacy policy.',
+      'visionary153 (“we”) respects the privacy of everyone who visits visionary153.com and the product websites we run on its subdomains, including the Lotto Wealthy web at lotto.visionary153.com (together, the “Site”), and complies with applicable laws, including the Personal Information Protection Act of Korea. This policy covers the Site only; each mobile app made by visionary153 follows its own privacy policy.',
     sections: [
       {
         heading: '1. Information we collect',
