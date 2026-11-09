@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import Products from '@/components/Products';
 import { getDictionary } from '@/dictionaries';
 import { toLocale } from '@/lib/i18n';
-import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from '@/lib/site';
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL, WEBSITE_JSON_LD } from '@/lib/site';
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -23,6 +23,10 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
       />
       <Hero t={t.hero} />
       <Products locale={locale} t={t.products} lotto={t.lotto} next={t.next} />

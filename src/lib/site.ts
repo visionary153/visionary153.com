@@ -3,6 +3,16 @@ export const SITE_NAME = 'visionary153';
 export const CONTACT_EMAIL = 'visionary153.dev@gmail.com';
 /** 로또부자 웹(번호 생성기) — 제품 소개에서 체험 링크로 잇는다 */
 export const LOTTO_RICH_WEB_URL = 'https://lotto.visionary153.com/';
+/**
+ * 구글 검색 결과의 사이트 이름은 홈페이지의 WebSite 구조화 데이터를 가장 먼저 본다 (없으면 도메인으로 표시).
+ * 하위 도메인 제품 웹(lotto.visionary153.com = 로또부자)은 각자 자기 WebSite를 둔다.
+ */
+export const WEBSITE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: `${SITE_URL}/`,
+};
 export const GTM_ID = 'GTM-N76Z8CCV';
 /** 네이버 서치어드바이저 소유확인 — 등록한 `/`와 언어별 페이지에 모두 넣는다 */
 export const NAVER_SITE_VERIFICATION = 'd18d0c3b292efbd08c71d05f42522f4784d9a5de';

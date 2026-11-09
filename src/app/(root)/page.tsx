@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, LOCALES } from '@/lib/i18n';
+import { WEBSITE_JSON_LD } from '@/lib/site';
 import styles from './page.module.css';
 
 // 정적 배포라 서버에서 Accept-Language를 볼 수 없어 브라우저에서 고른다.
@@ -23,6 +24,11 @@ const redirectScript = `(function () {
 export default function LanguageGatePage() {
   return (
     <main className={styles.gate}>
+      {/* 사이트 이름은 홈페이지(`/`)에서 읽으므로 언어 선택 페이지에도 둔다 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
+      />
       <script dangerouslySetInnerHTML={{ __html: redirectScript }} />
       {/* 스크립트가 꺼져 있으면 기본 언어로 이동 */}
       <noscript>
