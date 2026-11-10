@@ -11,8 +11,8 @@ visionary153(개발자·사업체)의 프로덕트 소개 홈페이지. 업무 �
 
 ## 구조
 
-- `src/app/(root)/` — `/` 전용 루트 레이아웃. 저장된 언어 → 브라우저 언어 순으로 `/ko/`·`/en/`으로 이동
-- `src/app/(site)/[lang]/` — 언어별 페이지(홈, `privacy/`), 메타, OG 이미지
+- 주소: 한국어는 접두어 없이 `/`·`/privacy/`, 영어는 `/en/`·`/en/privacy/` (2026-11-10, AdSense가 내용 없는 언어 이동 페이지를 거절해서). 언어 자동 이동 없음 — 헤더 KO/EN으로 전환. 옛 `/ko/*`는 `public/_redirects`로 301. 경로는 `lib/i18n.ts` `localePath()`로만 만든다
+- `src/app/(ko)/`·`src/app/(en)/en/` — 언어별 루트 레이아웃·페이지(얇은 껍데기). 메타·html 틀·홈·방침 본문은 `src/site/`에서 공유
 - 루트 레이아웃이 둘이라 404는 `src/app/global-not-found.tsx`
 - 문구는 모두 `src/dictionaries/ko.ts`·`en.ts` (en은 ko 타입을 따름). 도메인·이메일 등 상수는 `src/lib/site.ts`
 - `src/components/mockups/` — 로또부자 앱 화면 HTML 목업. 실제 스크린샷을 받으면 교체 예정
@@ -20,9 +20,9 @@ visionary153(개발자·사업체)의 프로덕트 소개 홈페이지. 업무 �
 ## 규칙
 
 - 제품 표기: 로또부자 / Lotto Wealthy. 연락처는 이메일만, GitHub 링크 없음
-- 분석: Google 태그 관리자(`GTM_ID`, `src/lib/site.ts`)는 `(site)` 레이아웃에만. 수집 항목이 바뀌면 개인정보처리방침도 함께 고친다
+- 분석: Google 태그 관리자(`GTM_ID`, `src/lib/site.ts`)는 공통 틀(`src/site/siteLayout.tsx`)에서 모든 페이지에. 수집 항목이 바뀌면 개인정보처리방침도 함께 고친다
 - 개인정보처리방침은 하위 도메인 제품 웹(lotto.visionary153.com 등)도 함께 다룬다. 그 웹들의 수집 항목이 바뀌어도 여기를 고친다
-- AdSense(`ADSENSE_CLIENT`)는 등록 사이트가 visionary153.com이라 소유확인 메타 태그(`google-adsense-account`)와 스크립트(`AdSenseScript`, afterInteractive — head에 직접 두면 hydration 불일치)를 `(root)`·`(site)` 레이아웃 모두에 둔다. ads.txt는 `public/ads.txt`
+- AdSense(`ADSENSE_CLIENT`)는 등록 사이트가 visionary153.com이라 소유확인 메타 태그(`google-adsense-account`)와 스크립트(`AdSenseScript`, afterInteractive — head에 직접 두면 hydration 불일치)를 모든 페이지에 둔다(`src/site/siteLayout.tsx` 공통 틀). ads.txt는 `public/ads.txt`
 - 로또부자 소개에 "당첨 확률 상승·예측" 표현 금지
 - 확인: `npm run lint`, `npm run typecheck`(route 타입 생성 포함), `npm run build`, 로컬 확인은 `npm run preview`
 - 포맷: Prettier (`npm run format`)

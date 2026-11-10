@@ -1,16 +1,18 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { getDictionary } from '@/dictionaries';
-import { languageAlternates, toLocale } from '@/lib/i18n';
+import { languageAlternates, localePath, type Locale } from '@/lib/i18n';
 import { CONTACT_EMAIL, SITE_NAME } from '@/lib/site';
 import styles from './privacy.module.css';
 
-export async function generateMetadata(
-  { params }: PageProps<'/[lang]/privacy'>,
+const PATH = 'privacy/';
+
+export async function privacyMetadata(
+  locale: Locale,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const locale = toLocale((await params).lang);
   const t = getDictionary(locale).privacy;
   const title = `${t.title} — ${SITE_NAME}`;
+  const url = localePath(locale, PATH);
   // openGraph는 통째로 덮어써지므로 레이아웃의 값(이미지·사이트명·언어)을 이어받는다
   const { openGraph: parentOpenGraph } = await parent;
 
@@ -18,21 +20,15 @@ export async function generateMetadata(
     title,
     description: t.description,
     alternates: {
-      canonical: `/${locale}/privacy/`,
-      languages: languageAlternates('privacy/'),
+      canonical: url,
+      languages: languageAlternates(PATH),
     },
-    openGraph: {
-      ...parentOpenGraph,
-      title,
-      description: t.description,
-      url: `/${locale}/privacy/`,
-    },
+    openGraph: { ...parentOpenGraph, title, description: t.description, url },
     twitter: { title, description: t.description },
   };
 }
 
-export default async function PrivacyPage({ params }: PageProps<'/[lang]/privacy'>) {
-  const locale = toLocale((await params).lang);
+export default function PrivacyContent({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).privacy;
 
   return (
@@ -54,7 +50,7 @@ export default async function PrivacyPage({ params }: PageProps<'/[lang]/privacy
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
       </p>
       <p className={styles.back}>
-        <a href={`/${locale}/`}>← {t.back}</a>
+        <a href={localePath(locale)}>← {t.back}</a>
       </p>
     </article>
   );

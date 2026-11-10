@@ -1,37 +1,27 @@
-import { notFound } from 'next/navigation';
-
 export const LOCALES = ['ko', 'en'] as const;
 export type Locale = (typeof LOCALES)[number];
 
-/** 브라우저 언어로 정하지 못할 때 쓰는 언어 */
+/** 접두어 없이 `/`에 놓이는 언어. 다른 언어는 `/en/`처럼 언어 경로 아래에 둔다 */
 export const DEFAULT_LOCALE: Locale = 'ko';
-
-/** 사용자가 고른 언어 — `/` 접속 시 이 값으로 이동한다 */
-export const LOCALE_STORAGE_KEY = 'v153-locale';
 
 export const OG_LOCALES: Record<Locale, string> = { ko: 'ko_KR', en: 'en_US' };
 
-export function isLocale(value: string): value is Locale {
-  return (LOCALES as readonly string[]).includes(value);
+/** 언어별 경로 — `path`는 `''`·`'privacy/'`처럼 앞 슬래시 없이 (ko: `/privacy/`, en: `/en/privacy/`) */
+export function localePath(locale: Locale, path = ''): string {
+  return locale === DEFAULT_LOCALE ? `/${path}` : `/${locale}/${path}`;
 }
 
-/** 라우트 파라미터 `[lang]`을 Locale로 — 정적 경로가 ko/en뿐이라 다른 값은 404 */
-export function toLocale(lang: string): Locale {
-  if (!isLocale(lang)) notFound();
-  return lang;
-}
-
-/** 같은 페이지의 다른 언어 경로 (`/ko/privacy/` → `/en/privacy/`) */
+/** 같은 페이지의 다른 언어 경로 (`/privacy/` ↔ `/en/privacy/`) */
 export function switchLocalePath(pathname: string, target: Locale): string {
-  const rest = pathname.replace(/^\/(ko|en)(?=\/|$)/, '');
-  return `/${target}${rest || '/'}`;
+  const path = pathname.replace(/^\/en(?=\/|$)/, '').replace(/^\//, '');
+  return localePath(target, path);
 }
 
-/** 언어별 페이지의 hreflang 목록 */
+/** 언어별 페이지의 hreflang 목록. 언어를 정하지 못한 사용자는 기본 언어로 */
 export function languageAlternates(path = '') {
   return {
-    ko: `/ko/${path}`,
-    en: `/en/${path}`,
-    'x-default': path ? `/ko/${path}` : '/',
+    ko: localePath('ko', path),
+    en: localePath('en', path),
+    'x-default': localePath(DEFAULT_LOCALE, path),
   };
 }

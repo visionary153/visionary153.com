@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
 import AdSenseScript from '@/components/AdSenseScript';
 import Footer from '@/components/Footer';
 import { GoogleTagManagerNoScript, GoogleTagManagerScript } from '@/components/GoogleTagManager';
 import Header from '@/components/Header';
 import { getDictionary } from '@/dictionaries';
 import { plexSansKr } from '@/lib/fonts';
-import { languageAlternates, LOCALES, OG_LOCALES, toLocale } from '@/lib/i18n';
+import { languageAlternates, localePath, LOCALES, OG_LOCALES, type Locale } from '@/lib/i18n';
 import {
   ADSENSE_CLIENT,
   BRAND_COLORS,
@@ -13,24 +14,19 @@ import {
   SITE_NAME,
   SITE_URL,
 } from '@/lib/site';
-import '../../globals.css';
 
-export const dynamicParams = false;
+// 루트 레이아웃이 언어마다 하나씩이라((ko) → `/`, (en) → `/en/`) 공통 부분을 여기 모은다
 
-export function generateStaticParams() {
-  return LOCALES.map((lang) => ({ lang }));
-}
-
-export const viewport: Viewport = {
+export const siteViewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
     { media: '(prefers-color-scheme: dark)', color: BRAND_COLORS.night },
   ],
 };
 
-export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Promise<Metadata> {
-  const locale = toLocale((await params).lang);
+export function siteMetadata(locale: Locale): Metadata {
   const t = getDictionary(locale).meta;
+  const home = localePath(locale);
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -38,9 +34,10 @@ export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Prom
     description: t.description,
     applicationName: SITE_NAME,
     verification: { other: { 'naver-site-verification': NAVER_SITE_VERIFICATION } },
+    // AdSense 사이트 소유확인 (등록 사이트가 visionary153.com)
     other: { 'google-adsense-account': ADSENSE_CLIENT },
     alternates: {
-      canonical: `/${locale}/`,
+      canonical: home,
       languages: languageAlternates(),
     },
     openGraph: {
@@ -48,7 +45,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Prom
       siteName: SITE_NAME,
       title: t.title,
       description: t.description,
-      url: `/${locale}/`,
+      url: home,
       locale: OG_LOCALES[locale],
       alternateLocale: LOCALES.filter((other) => other !== locale).map(
         (other) => OG_LOCALES[other],
@@ -62,8 +59,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Prom
   };
 }
 
-export default async function SiteLayout({ children, params }: LayoutProps<'/[lang]'>) {
-  const locale = toLocale((await params).lang);
+export function SiteDocument({ locale, children }: { locale: Locale; children: ReactNode }) {
   const t = getDictionary(locale);
 
   return (

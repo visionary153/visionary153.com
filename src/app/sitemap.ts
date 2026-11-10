@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { languageAlternates, LOCALES } from '@/lib/i18n';
+import { languageAlternates, localePath, LOCALES } from '@/lib/i18n';
 import { SITE_URL } from '@/lib/site';
 
 export const dynamic = 'force-static';
@@ -14,7 +14,7 @@ function absoluteAlternates(path: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   return PAGES.flatMap((path) =>
     LOCALES.map((locale) => ({
-      url: `${SITE_URL}/${locale}/${path}`,
+      url: `${SITE_URL}${localePath(locale, path)}`,
       alternates: { languages: absoluteAlternates(path) },
     })),
   );

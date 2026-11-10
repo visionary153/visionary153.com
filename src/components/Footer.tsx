@@ -1,5 +1,5 @@
 import type { Dictionary } from '@/dictionaries';
-import type { Locale } from '@/lib/i18n';
+import { localePath, type Locale } from '@/lib/i18n';
 import { CONTACT_EMAIL } from '@/lib/site';
 import Logo from './Logo';
 import styles from './Footer.module.css';
@@ -18,7 +18,7 @@ export default function Footer({ locale, t }: FooterProps) {
           <span className={styles.copyright}>© 2026 visionary153. All rights reserved.</span>
         </div>
         <nav aria-label={t.label} className={styles.links}>
-          <a href={`/${locale}/privacy/`}>{t.privacy}</a>
+          <a href={localePath(locale, 'privacy/')}>{t.privacy}</a>
           <a href={`mailto:${CONTACT_EMAIL}`}>{t.contact}</a>
         </nav>
       </div>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Logo from '@/components/Logo';
 import { plexSansKr } from '@/lib/fonts';
 import { SITE_NAME } from '@/lib/site';
-import styles from './(root)/page.module.css';
+import styles from './not-found.module.css';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function GlobalNotFound() {
             <span lang="ko">페이지를 찾을 수 없어요.</span> <span lang="en">Page not found.</span>
           </p>
           <nav aria-label="Home" className={styles.links}>
-            <Link href="/ko/" hrefLang="ko" lang="ko">
+            <Link href="/" hrefLang="ko" lang="ko">
               홈으로
             </Link>
             <Link href="/en/" hrefLang="en" lang="en">
